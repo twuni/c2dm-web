@@ -21,9 +21,11 @@ public class MessageResponder implements Responder {
 
 	private static final UrlEncodedParametersAdapter ADAPTER = new UrlEncodedParametersAdapter();
 
+	private final Map<String, String> registrations;
 	private final Map<String, String> users;
 
 	public MessageResponder( Map<String, String> registrations, Map<String, String> users ) {
+		this.registrations = registrations;
 		this.users = users;
 	}
 
@@ -34,8 +36,10 @@ public class MessageResponder implements Responder {
 
 		if( parameters.keySet().contains( "user_id" ) ) {
 
-			if( users.containsKey( parameters.get( "user_id" ) ) ) {
-				parameters.put( "registration_id", users.get( parameters.get( "user_id" ) ) );
+			String userId = parameters.get( "user_id" );
+
+			if( users.containsKey( userId ) ) {
+				parameters.put( "registration_id", registrations.get( users.get( userId ) ) );
 			}
 
 		}
