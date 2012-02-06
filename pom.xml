@@ -1,38 +1,72 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	
-	<parent>
-	  <groupId>org.twuni</groupId>
-	  <artifactId>maven-parent</artifactId>
-	  <version>1.0.0-SNAPSHOT</version>
-	</parent>
+  <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>c2dm-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+  <parent>
+    <groupId>org.twuni</groupId>
+    <artifactId>maven-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
 
-	<dependencies>
+  <artifactId>c2dm-web</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-		<dependency>
-			<groupId>org.twuni</groupId>
-			<artifactId>common-net-http</artifactId>
-			<version>0.1.4-SNAPSHOT</version>
-		</dependency>
+  <repositories>
 
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.1.2</version>
-		</dependency>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>twuni-releases</id>
+      <name>Twuni Software Releases</name>
+      <url>http://maven.twuni.org/libs-release</url>
+      <layout>default</layout>
+    </repository>
 
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.3</version>
-			<scope>runtime</scope>
-		</dependency>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+      <id>twuni-snapshots</id>
+      <name>Twuni Software Snapshots</name>
+      <url>http://maven.twuni.org/libs-snapshot</url>
+      <layout>default</layout>
+    </repository>
 
-	</dependencies>
+  </repositories>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.twuni</groupId>
+      <artifactId>common-net-http</artifactId>
+      <version>0.1.4-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.6.3</version>
+      <scope>runtime</scope>
+    </dependency>
+
+  </dependencies>
 
 </project>
