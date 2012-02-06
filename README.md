@@ -55,7 +55,7 @@ Parameters:
 This is the API call you would make to send a message to a specific client.
 An `auth_token` can be obtained via Google's ClientLogin API:
 
-  curl https://www.google.com/accounts/ClientLogin -d Email=you@yourdomain.com -d Passwd=yourPassword -d accountType=HOSTED_OR_GOOGLE -d source=your.package.name -d service=ac2dm
+    curl https://www.google.com/accounts/ClientLogin -d Email=you@yourdomain.com -d Passwd=yourPassword -d accountType=HOSTED_OR_GOOGLE -d source=your.package.name -d service=ac2dm
 
 The email you use for this request should be identical to the email you have authorized in your Android manifest.
 See [Registering for C2DM](http://code.google.com/android/c2dm/index.html#registering) in the Android C2DM documentation.
@@ -68,11 +68,11 @@ Building
 
 You can build the server by simply typing the following from the project's root directory:
 
-  mvn clean package
+    mvn clean package
 
 Running
 =======
 
 To run the C2DM server, run the following:
 
-  mvn exec:java -Dexec.mainClass=org.twuni.web.c2dm.C2DMServer
+    mvn exec:java -Dexec.mainClass=org.twuni.web.c2dm.C2DMServer
