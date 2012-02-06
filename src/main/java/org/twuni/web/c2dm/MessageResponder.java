@@ -10,16 +10,14 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.twuni.common.MultiValueMap;
+
+import org.twuni.common.net.http.UrlEncodedParameters;
 import org.twuni.common.net.http.request.Request;
-import org.twuni.common.net.http.request.adapter.UrlEncodedParametersAdapter;
 import org.twuni.common.net.http.responder.Responder;
 import org.twuni.common.net.http.response.Response;
 import org.twuni.common.net.http.response.Status;
 
 public class MessageResponder implements Responder {
-
-	private static final UrlEncodedParametersAdapter ADAPTER = new UrlEncodedParametersAdapter();
 
 	private final Map<String, String> registrations;
 	private final Map<String, String> users;
@@ -32,7 +30,7 @@ public class MessageResponder implements Responder {
 	@Override
 	public Response respondTo( Request request ) {
 
-		MultiValueMap<String, String> parameters = ADAPTER.adapt( request );
+		UrlEncodedParameters parameters = new UrlEncodedParameters( new String( request.getContent() ) );
 
 		if( parameters.keySet().contains( "user_id" ) ) {
 

@@ -3,16 +3,13 @@ package org.twuni.web.c2dm;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.twuni.common.MultiValueMap;
+import org.twuni.common.net.http.UrlEncodedParameters;
 import org.twuni.common.net.http.request.Request;
-import org.twuni.common.net.http.request.adapter.UrlEncodedParametersAdapter;
 import org.twuni.common.net.http.responder.Responder;
 import org.twuni.common.net.http.response.Response;
 import org.twuni.common.net.http.response.Status;
 
 public class RegistrationResponder implements Responder {
-
-	private static final UrlEncodedParametersAdapter ADAPTER = new UrlEncodedParametersAdapter();
 
 	private final Map<String, String> registrations;
 	private final Map<String, String> users;
@@ -25,7 +22,7 @@ public class RegistrationResponder implements Responder {
 	@Override
 	public Response respondTo( Request request ) {
 
-		MultiValueMap<String, String> parameters = ADAPTER.adapt( request );
+		UrlEncodedParameters parameters = new UrlEncodedParameters( new String( request.getContent() ) );
 
 		if( parameters.keySet().containsAll( Arrays.asList( new String [] {
 		    "registration_id",
