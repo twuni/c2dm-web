@@ -11,7 +11,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-import org.twuni.common.net.http.UrlEncodedParameters;
+import org.twuni.common.net.http.URLEncodedParameters;
 import org.twuni.common.net.http.request.Request;
 import org.twuni.common.net.http.responder.Responder;
 import org.twuni.common.net.http.response.Response;
@@ -30,7 +30,7 @@ public class MessageResponder implements Responder {
 	@Override
 	public Response respondTo( Request request ) {
 
-		UrlEncodedParameters parameters = new UrlEncodedParameters( new String( request.getContent() ) );
+		URLEncodedParameters parameters = new URLEncodedParameters( new String( request.getContent() ) );
 
 		if( parameters.keySet().contains( "user_id" ) ) {
 

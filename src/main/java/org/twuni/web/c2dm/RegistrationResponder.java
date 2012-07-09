@@ -3,7 +3,7 @@ package org.twuni.web.c2dm;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.twuni.common.net.http.UrlEncodedParameters;
+import org.twuni.common.net.http.URLEncodedParameters;
 import org.twuni.common.net.http.request.Request;
 import org.twuni.common.net.http.responder.Responder;
 import org.twuni.common.net.http.response.Response;
@@ -22,7 +22,7 @@ public class RegistrationResponder implements Responder {
 	@Override
 	public Response respondTo( Request request ) {
 
-		UrlEncodedParameters parameters = new UrlEncodedParameters( new String( request.getContent() ) );
+		URLEncodedParameters parameters = new URLEncodedParameters( new String( request.getContent() ) );
 
 		if( parameters.keySet().containsAll( Arrays.asList( new String [] {
 		    "registration_id",
