@@ -25,7 +25,7 @@
       </snapshots>
       <id>twuni-releases</id>
       <name>Twuni Software Releases</name>
-      <url>http://maven.twuni.org/repository/libs-release-local</url>
+      <url>https://maven.twuni.org/repository/libs-release-local</url>
       <layout>default</layout>
     </repository>
 
@@ -40,7 +40,7 @@
       </snapshots>
       <id>twuni-snapshots</id>
       <name>Twuni Software Snapshots</name>
-      <url>http://maven.twuni.org/repository/libs-snapshot-local</url>
+      <url>https://maven.twuni.org/repository/libs-snapshot-local</url>
       <layout>default</layout>
     </repository>
 
